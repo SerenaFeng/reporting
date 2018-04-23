@@ -1,5 +1,5 @@
 #!/bin/bash
-RUN cp -Rf 3rd_party/* display
+cp -Rf 3rd_party display
 
 cp -r display /usr/share/nginx/html
 
