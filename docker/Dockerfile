@@ -29,6 +29,7 @@ WORKDIR ${HOME}
 RUN apt-get update && apt-get install -y \
 build-essential \
 ssh \
+vim \
 curl \
 gnupg \
 python-pip \
