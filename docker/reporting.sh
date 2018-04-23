@@ -4,7 +4,7 @@ export PYTHONPATH="${PYTHONPATH}:./reporting"
 export CONFIG_REPORTING_YAML=./reporting/reporting.yaml
 
 declare -a versions=(master)
-declare -a projects=(functest storperf yardstick qtip vsperf bottlenecks)
+declare -a projects=(functest)
 
 project=$1
 reporting_type=$2
@@ -14,20 +14,16 @@ for i in "${versions[@]}"
 do
     for j in "${projects[@]}"
        do
-           mkdir -p display/$i/$j
+           mkdir -p /usr/share/nginx/html/display/$i/$j
        done
 done
 
 # copy images, js, css, 3rd_party
-cp -Rf 3rd_party display
-cp -Rf css display
-cp -Rf html/* display
-cp -Rf img display
-cp -Rf js display
+#cp -Rf 3rd_party display
 
 for i in "${versions[@]}"
 do
-  cp -Rf html/functest.html display/$i/functest
+  cp -Rf /usr/share/nginx/html/display/functest.html /usr/share/nginx/html/display/$i/functest
 done
 
 # if nothing is precised run all the reporting generation
