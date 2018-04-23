@@ -51,7 +51,7 @@ RUN pip install -r ${working_dir}/requirements.txt
 
 WORKDIR ${working_dir}
 RUN python setup.py install
-RUN docker/reporting.sh
+#RUN docker/reporting.sh
 RUN docker/web_server.sh
 
 expose 8000

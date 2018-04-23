@@ -4,7 +4,7 @@ export PYTHONPATH="${PYTHONPATH}:./reporting"
 export CONFIG_REPORTING_YAML=./reporting/reporting.yaml
 
 declare -a versions=(master)
-declare -a projects=(functest)
+declare -a projects=(functest storperf yardstick qtip vsperf bottlenecks)
 
 project=$1
 reporting_type=$2
@@ -65,14 +65,14 @@ if [ -z "$1" ]; then
     sleep 5
   done
 
-  echo "Functest reporting vIMS..."
-  report_project "functest" "functest" "vims"
-  echo "reporting vIMS...OK"
-  sleep 5
-  echo "Functest reporting Tempest..."
-  report_project "functest" "functest" "tempest"
-  echo "reporting Tempest...OK"
-  sleep 5
+#  echo "Functest reporting vIMS..."
+#  report_project "functest" "functest" "vims"
+#  echo "reporting vIMS...OK"
+#  sleep 5
+#  echo "Functest reporting Tempest..."
+#  report_project "functest" "functest" "tempest"
+#  echo "reporting Tempest...OK"
+#  sleep 5
 
 else
   if [ -z "$2" ]; then
