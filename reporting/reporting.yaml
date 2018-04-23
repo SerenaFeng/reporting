@@ -1,19 +1,15 @@
 ---
 general:
     installers:
-        - apex
-        - compass
         - daisy
         - fuel
-        - joid
 
     versions:
         - master
-        - fraser
 
     log:
         log_file: reporting.log
-        log_level: ERROR
+        log_level: INFO
 
     period: 10
 
@@ -41,7 +37,7 @@ functest:
         - rally_full
     max_scenario_criteria: 50
     test_conf: https://git.opnfv.org/cgit/functest/plain/functest/ci/testcases.yaml
-    log_level: ERROR
+    log_level: INFO
     jenkins_url: https://build.opnfv.org/ci/view/functest/job/
     # yamllint disable rule:truthy
     exclude_noha: False
