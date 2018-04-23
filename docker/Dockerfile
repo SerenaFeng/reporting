@@ -20,8 +20,8 @@ LABEL version="1.0" description="OPNFV Test Reporting Docker container"
 
 ARG BRANCH=master
 
-ENV HOME /home/opnfv
-ENV working_dir ${HOME}/releng-testresults/reporting
+ENV HOME /home
+ENV working_dir ${HOME}/reporting
 ENV CONFIG_REPORTING_YAML ${working_dir}/reporting/reporting.yaml
 
 WORKDIR ${HOME}
@@ -40,14 +40,14 @@ supervisor \
 
 RUN pip install --upgrade pip && easy_install -U setuptools==30.0.0
 
-RUN git clone --depth 1 https://gerrit.opnfv.org/gerrit/releng-testresults /home/opnfv/releng-testresults
+RUN git clone https://github.com/SerenaFeng/reporting.git ${working_dir}
 RUN pip install -r ${working_dir}/requirements.txt
 
-RUN sh -c 'curl -sL https://deb.nodesource.com/setup_8.x | bash -' \
-    && apt-get install -y nodejs \
-    && npm install -g bower \
-    && npm install -g grunt \
-    && npm install -g grunt-cli
+#RUN sh -c 'curl -sL https://deb.nodesource.com/setup_8.x | bash -' \
+#    && apt-get install -y nodejs \
+#    && npm install -g bower \
+#    && npm install -g grunt \
+#    && npm install -g grunt-cli
 
 WORKDIR ${working_dir}
 RUN python setup.py install
