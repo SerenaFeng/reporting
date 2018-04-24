@@ -36,7 +36,7 @@ functest:
         - tempest_full_parallel
         - rally_full
     max_scenario_criteria: 50
-    test_conf: https://github.com/serenafeng/reporting/etc/testcases.yaml
+    test_conf: https://raw.githubusercontent.com/SerenaFeng/reporting/master/etc/testcases.yaml
     log_level: INFO
     jenkins_url: https://build.opnfv.org/ci/view/functest/job/
     # yamllint disable rule:truthy

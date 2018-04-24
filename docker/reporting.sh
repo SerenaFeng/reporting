@@ -14,7 +14,7 @@ for i in "${versions[@]}"
 do
     for j in "${projects[@]}"
        do
-           mkdir -p /usr/share/nginx/html/display/$i/$j
+           mkdir -p display/$i/$j
        done
 done
 
@@ -23,7 +23,7 @@ done
 
 for i in "${versions[@]}"
 do
-  cp -Rf /usr/share/nginx/html/display/functest.html /usr/share/nginx/html/display/$i/functest
+  cp -Rf ./display/functest.html ./display/$i/functest
 done
 
 # if nothing is precised run all the reporting generation
