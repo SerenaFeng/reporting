@@ -1,6 +1,7 @@
 ---
 general:
     installers:
+        - apex
         - daisy
         - fuel
 
